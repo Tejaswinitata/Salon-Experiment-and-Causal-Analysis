@@ -194,7 +194,9 @@ with tabs[2]:
     for reg, colr in [("Treatment Region", BROWN), ("Control Region", TAN)]:
         g = tr[tr.region == reg]
         fig.add_trace(go.Scatter(x=g.month, y=g.value, name=reg, mode="lines+markers", line=dict(color=colr, width=3)))
-    fig.add_vline(x=A.CUTOFF, line_dash="dash", line_color=DARK, annotation_text="Rollout")
+    fig.add_shape(type="line", x0=A.CUTOFF, x1=A.CUTOFF, y0=0, y1=1, yref="paper",
+                  line=dict(dash="dash", color=DARK))
+    fig.add_annotation(x=A.CUTOFF, y=1, yref="paper", text="Rollout", showarrow=False, yshift=10)
     fig.update_layout(title="Monthly trend by region", yaxis_title=metric)
     st.plotly_chart(style(fig, 400), use_container_width=True)
     e = did_rev if key == "revenue" else did_ns
