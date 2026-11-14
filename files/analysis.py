@@ -6,16 +6,19 @@ import pandas as pd
 from scipy import stats
 
 HERE = Path(__file__).parent
+ROOT = HERE.parent
 CUTOFF = "2026-07"  # intervention month
 
 
 def _find(name):
-    for folder in (HERE, HERE / "data"):
-        for cand in (name, name + ".gz"):
+    for cand in (name, name + ".gz"):
+        for folder in (HERE, HERE / "data"):
             if (folder / cand).exists():
                 return folder / cand
-    raise FileNotFoundError(f"{name} not found next to app.py or in ./data")
-
+        hits = list(ROOT.rglob(cand))
+        if hits:
+            return hits[0]
+    raise FileNotFoundError(f"{name} not found anywhere in the repo")
 
 def load_experiment():
     return pd.read_csv(_find("experiment_cohort_8000.csv"))
