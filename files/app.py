@@ -8,13 +8,13 @@ import analysis as A
 
 st.set_page_config(page_title="Salon Experiment & Causal Analysis", page_icon="💇", layout="wide")
 
-PEACH, CREAM, BROWN, DARK, TAN = "#F0D9C6", "#FDF1E7", "#7A4A1E", "#3B2A1E", "#C9925A"
+PEACH, CREAM, BROWN, DARK, TAN = "#D9EEF0", "#F2F9FA", "#0F5C63", "#12263A", "#E8894A"
 GITHUB = "https://github.com/Tejaswinitata/Salon-Experiment-and-Causal-Analysis"
 
 st.markdown(f"""
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
-html, body, [class*="css"], .stApp {{ font-family:'Poppins',sans-serif; color:{DARK}; }}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+html, body, [class*="css"], .stApp {{ font-family:'Inter',sans-serif; color:{DARK}; }}
 .stApp {{ background:#fff; }}
 header[data-testid="stHeader"], footer, #MainMenu {{ display:none; }}
 .block-container {{ padding:0 0 3rem 0; max-width:100%; }}
@@ -79,7 +79,7 @@ pre_est, pre_p = A.pretrend(om, "revenue")
 
 
 def style(fig, h=380):
-    fig.update_layout(height=h, plot_bgcolor="#fff", paper_bgcolor="#fff", font=dict(family="Poppins", color=DARK),
+    fig.update_layout(height=h, plot_bgcolor="#fff", paper_bgcolor="#fff", font=dict(family="Inter", color=DARK),
                       margin=dict(l=10, r=10, t=40, b=10), legend=dict(orientation="h", y=1.12))
     fig.update_xaxes(gridcolor="#f1e6dc")
     fig.update_yaxes(gridcolor="#f1e6dc")
