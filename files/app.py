@@ -41,13 +41,14 @@ header[data-testid="stHeader"], footer, #MainMenu {{ display:none; }}
 .trio {{ display:flex; justify-content:space-around; gap:20px; flex-wrap:wrap; padding:30px 6vw 20px; text-align:center; }}
 .trio div {{ max-width:240px; font-size:13px; opacity:.85; }}
 .ico {{ width:70px; height:70px; border:2px solid {BROWN}; border-radius:50%; display:flex; align-items:center; justify-content:center;
-  margin:0 auto 10px; font-size:28px; }}
+    margin:0 auto 10px; font-size:30px; font-weight:600; color:{BROWN}; }}
 .trio h5 {{ margin:0 0 6px; font-size:15px; font-weight:500; }}
 .stTabs [data-baseweb="tab-list"] {{ gap:28px; justify-content:center; background:{CREAM}; padding:6px 6vw 0; }}
 .stTabs [data-baseweb="tab"] {{ background:transparent; font-size:14px; color:{DARK}; opacity:.7; }}
 .stTabs [aria-selected="true"] {{ opacity:1; color:{BROWN}; }}
 .stTabs [data-baseweb="tab-highlight"] {{ background:{BROWN}; }}
 .stTabs [data-baseweb="tab-panel"] {{ padding:28px 6vw 10px; }}
+.stTabs {{ padding:0 6vw; }}
 h3 {{ color:{BROWN}; font-weight:500; }}
 .card {{ background:{CREAM}; border-radius:14px; padding:20px 24px; margin-bottom:14px; font-size:14px; line-height:1.7; }}
 .card b {{ color:{BROWN}; }}
@@ -113,9 +114,9 @@ st.markdown(f"""
 <p>Every number below is computed live from the project data, using the same methods as the Python notebook.
 <b>All data are synthetic</b>, so results demonstrate a method and are not claims about a real business.</p></div>
 <div class="trio">
- <div><div class="ico">🎲</div><h5>Randomised</h5>Clients are assigned 1:1 to treatment or control, so the groups are comparable.</div>
- <div><div class="ico">📈</div><h5>Causal</h5>Difference-in-differences handles the quarter where no experiment was run.</div>
- <div><div class="ico">✅</div><h5>Honest</h5>Assumptions are tested and limits are stated next to every result.</div>
+ <div><div class="ico">1</div><h5>Randomised</h5>Clients are assigned 1:1 to treatment or control, so the groups are comparable.</div>
+ <div><div class="ico">2</div><h5>Causal</h5>Difference-in-differences handles the quarter where no experiment was run.</div>
+ <div><div class="ico">3</div><h5>Honest</h5>Assumptions are tested and limits are stated next to every result.</div>
 </div>
 """, unsafe_allow_html=True)
 
